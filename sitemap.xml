@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://daria-kibenko.github.io/ITMO_ICT_WebDevelopment_2024-2025/</loc>
+         <loc>https://daria-kibenko.github.io/ITMO_ICT_WebDevelopment_2024-2025/flight_board/</loc>
          <lastmod>2025-01-18</lastmod>
     </url>
     <url>
-         <loc>https://daria-kibenko.github.io/ITMO_ICT_WebDevelopment_2024-2025/result/</loc>
+         <loc>https://daria-kibenko.github.io/ITMO_ICT_WebDevelopment_2024-2025/flight_board/result/</loc>
          <lastmod>2025-01-18</lastmod>
     </url>
 </urlset>
