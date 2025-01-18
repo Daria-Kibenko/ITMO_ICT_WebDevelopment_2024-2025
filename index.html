@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="None">
         
-        <link rel="canonical" href="https://daria-kibenko.github.io/ITMO_ICT_WebDevelopment_2024-2025/">
+        <link rel="canonical" href="https://daria-kibenko.github.io/ITMO_ICT_WebDevelopment_2024-2025/doc2/">
         <link rel="shortcut icon" href="img/favicon.ico">
-        <title>Laboratory work 1</title>
+        <title>Flight Booking System Documentation</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/fontawesome.min.css" rel="stylesheet">
         <link href="css/brands.min.css" rel="stylesheet">
@@ -25,7 +25,7 @@
     <body class="homepage">
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href=".">Laboratory work 1</a>
+                <a class="navbar-brand" href=".">Flight Booking System Documentation</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -36,22 +36,10 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="nav-item">
-                                <a href="task-1/" class="nav-link">Task_1</a>
+                                <a href="." class="nav-link active" aria-current="page">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a href="task-2/" class="nav-link">Task-2</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="task-3/" class="nav-link">Task-3</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="task-4/" class="nav-link">Task-4</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="task-5/" class="nav-link">Task-5</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="conclusion/" class="nav-link">Conclusion</a>
+                                <a href="result/" class="nav-link">Demonstration</a>
                             </li>
                         </ul>
 
@@ -61,6 +49,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" class="nav-link disabled">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="result/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -79,13 +77,13 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#welcome-to-mkdocs" class="nav-link">Welcome to MkDocs</a>
+            <li class="nav-item" data-bs-level="1"><a href="#flight-booking-system-documentation" class="nav-link">Flight Booking System Documentation</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#commands" class="nav-link">Commands</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_1" class="nav-link">Описание задания</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#project-layout" class="nav-link">Project layout</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">Реализация</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -96,20 +94,477 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
+<h1 id="flight-booking-system-documentation">Flight Booking System Documentation</h1>
+<h2 id="_1">Описание задания</h2>
+<p><strong>Цель работы</strong>: Реализация сайта с использованием фреймворка Django 3 и СУБД PostgreSQL, предназначенного для отображения и управления данными о авиаперелетах.</p>
+<p><strong>Функциональные требования</strong>:</p>
 <ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
+<li>Регистрация и авторизация пользователей.</li>
+<li>Просмотр и резервирование мест на рейсах.</li>
+<li>Управление резервированием: возможность редактирования и удаления пользователем своих резервирований.</li>
+<li>Администрирование через Django Admin:</li>
+<li>
+<ul>
+<li>Регистрация пассажиров на рейсы. </li>
 </ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
+</li>
+<li>
+<ul>
+<li>Внесение данных о номерах билетов.</li>
+</ul>
+</li>
+<li>Отображение в клиентской части списка всех пассажиров рейса.</li>
+<li>Добавление и просмотр отзывов к рейсам с сохранением даты рейса, текста комментария, рейтинга (1-10) и информации о комментаторе.</li>
+</ul>
+<h2 id="_2">Реализация</h2>
+<h3 id="modelspy">Модели (models.py)</h3>
+<p>Модели определяют структуру базы данных для проекта.</p>
+<ol>
+<li><strong>Flight</strong></li>
+</ol>
+<pre><code class="language-python">   class Flight(models.Model):
+    number = models.CharField(max_length=10)
+    airline = models.CharField(max_length=50)
+    departure = models.CharField(max_length=50)
+    arrival = models.CharField(max_length=50)
+    flight_type = models.CharField(max_length=10, choices=[('departure', 'Departure'), ('arrival', 'Arrival')])
+    gate = models.CharField(max_length=5)
+
+    def __str__(self):
+        return f&quot;{self.number} - {self.airline}&quot;
+  ```
+**Описание**: Хранит данные о рейсе: номер рейса, авиакомпания, пункты отправления и прибытия, тип рейса, номер гейта.
+
+2. **Reservation**
+```python
+class Reservation(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
+    seat_number = models.CharField(max_length=5)
+
+    def __str__(self):
+        return f&quot;Reservation: {self.user.username} - {self.flight.number} ({self.seat_number})&quot;
+</code></pre>
+<p><strong>Описание</strong>: Связывает пользователей с рейсами и позволяет хранить информацию о забронированных местах.</p>
+<ol>
+<li><strong>Review</strong></li>
+</ol>
+<pre><code class="language-python">class Review(models.Model):
+    flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    date = models.DateField()
+    text = models.TextField()
+    rating = models.IntegerField()
+
+    def __str__(self):
+        return f&quot;Review by {self.user.username} - {self.flight.number} ({self.rating}/10)&quot;
+</code></pre>
+<p><strong>Описание</strong>: Хранит отзывы пользователей о рейсах, включая текст, дату, рейтинг и автора.</p>
+<h3 id="formspy">Формы (forms.py)</h3>
+<p>Формы используются для ввода данных пользователем через интерфейс.</p>
+<ol>
+<li><strong>ReservationForm</strong></li>
+</ol>
+<pre><code class="language-python">class ReservationForm(forms.ModelForm):
+    class Meta:
+        model = Reservation
+        fields = ['seat_number']
+</code></pre>
+<p>Описание: Форма для бронирования мест на рейсах.</p>
+<ol>
+<li><strong>ReviewForm</strong></li>
+</ol>
+<pre><code class="language-python">class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = ['date', 'text', 'rating']
+</code></pre>
+<p>Описание: Форма для добавления отзывов к рейсам.</p>
+<h3 id="viewspy">Представления (views.py)</h3>
+<p>Логика обработки запросов и отображения страниц.</p>
+<ol>
+<li><strong>flight_list</strong></li>
+</ol>
+<pre><code class="language-python">@login_required
+def flight_list(request):
+    flights = Flight.objects.all()
+    return render(request, 'flights/flight_list.html', {'flights': flights})
+</code></pre>
+<p><strong>Описание</strong>: Отображает список всех рейсов.</p>
+<ol>
+<li><strong>reserve_seat</strong></li>
+</ol>
+<pre><code class="language-python">@login_required
+def reserve_seat(request, flight_id):
+    flight = Flight.objects.get(id=flight_id)
+    if request.method == 'POST':
+        form = ReservationForm(request.POST)
+        if form.is_valid():
+            reservation = form.save(commit=False)
+            reservation.user = request.user
+            reservation.flight = flight
+            reservation.save()
+            return redirect('flight_list')
+    else:
+        form = ReservationForm()
+    return render(request, 'flights/reserve_seat.html', {'form': form, 'flight': flight})
+</code></pre>
+<p><strong>Описание</strong>: Реализует функционал бронирования мест на рейсах.</p>
+<ol>
+<li><strong>flight_reviews</strong></li>
+</ol>
+<pre><code class="language-python">@login_required
+def flight_reviews(request, flight_id):
+    flight = Flight.objects.get(id=flight_id)
+    reviews = Review.objects.filter(flight=flight)
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.user = request.user
+            review.flight = flight
+            review.save()
+            return redirect('flight_reviews', flight_id=flight_id)
+    else:
+        form = ReviewForm()
+    return render(request, 'flights/flight_reviews.html', {'flight': flight, 'reviews': reviews, 'form': form})
+</code></pre>
+<p><strong>Описание</strong>: Отображает отзывы о рейсе и позволяет добавлять новые.</p>
+<ol>
+<li><strong>register</strong></li>
+</ol>
+<pre><code class="language-python">def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('flight_list')
+    else:
+        form = UserCreationForm()
+    return render(request, 'flights/register.html', {'form': form})
+</code></pre>
+<p><strong>Описание</strong>: Обеспечивает регистрацию новых пользователей.</p>
+<ol>
+<li><strong>login_view и logout_view</strong></li>
+</ol>
+<pre><code class="language-python">def login_view(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(data=request.POST)
+        if form.is_valid():
+            user = form.get_user()
+            login(request, user)
+            return redirect('flight_list')
+    else:
+        form = AuthenticationForm()
+    return render(request, 'flights/login.html', {'form': form})
+
+def logout_view(request):
+    logout(request)
+    return redirect('login')
+</code></pre>
+<p><strong>Описание</strong>: Обеспечивают вход и выход пользователей из системы.</p>
+<ol>
+<li><strong>add_review</strong></li>
+</ol>
+<pre><code class="language-python">@login_required
+def add_review(request, flight_id):
+    flight = get_object_or_404(Flight, id=flight_id)
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.user = request.user
+            review.flight = flight
+            review.save()
+            return redirect('flight_reviews', flight_id=flight_id)
+    else:
+        form = ReviewForm()
+    return render(request, 'flights/add_review.html', {'form': form, 'flight': flight})
+</code></pre>
+<p><strong>Описание</strong>: Реализует добавление отзывов о рейсах.</p>
+<h3 id="django-admin-adminpy">Django Admin (admin.py)</h3>
+<p>Встроенный инструмент фреймворка Django, предназначенный для управления данными в приложении через удобный веб-интерфейс.
+Предназначен для:
+- Управление данными без необходимости писать код;
+- Разграничение доступа;
+- Кастомизация интерфейса (настройка отображения данных, добавление фильтров, поиск, группировка и прочее для удобства администраторов).</p>
+<ol>
+<li><strong>FlightAdmin</strong></li>
+</ol>
+<pre><code class="language-python">@admin.register(Flight)
+class FlightAdmin(admin.ModelAdmin):
+    list_display = ('number', 'airline', 'departure', 'arrival', 'flight_type', 'gate')
+</code></pre>
+<p><strong>Описание</strong>: Управление данными о рейсах.</p>
+<ol>
+<li><strong>ReservationAdmin</strong></li>
+</ol>
+<pre><code class="language-python">@admin.register(Reservation)
+class ReservationAdmin(admin.ModelAdmin):
+    list_display = ('user', 'flight', 'seat_number')
+   ```
+**Описание**: Управление бронированиями.
+
+3. **ReviewAdmin**
+```python
+@admin.register(Review)
+class ReviewAdmin(admin.ModelAdmin):
+    list_display = ('flight', 'user', 'date', 'rating')
+   ```
+**Описание**: Управление отзывами.
+
+### **URLs (urls.py)**
+```python
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.flight_list, name='flight_list'),
+    path('register/', views.register, name='register'),
+    path('login/', views.login_view, name='login'),
+    path('logout/', views.logout_view, name='logout'),
+    path('reserve/&lt;int:flight_id&gt;/', views.reserve_seat, name='reserve_seat'),
+    path('reviews/&lt;int:flight_id&gt;/', views.flight_reviews, name='flight_reviews'),
+    path('add_review/&lt;int:flight_id&gt;/', views.add_review, name='add_review'),
+]
+</code></pre>
+<p><strong>Описание маршрутов</strong>:</p>
+<ul>
+<li><code>/</code> - Отображает список доступных рейсов (функция flight_list).</li>
+<li><code>/register/</code>- Регистрация нового пользователя (функция register).</li>
+<li><code>/login/</code>  - Вход пользователя в систему (функция login_view).</li>
+<li><code>/logout/</code>  - Выход пользователя из системы (функция logout_view).</li>
+<li><code>/reserve/&lt;int:flight_id&gt;/</code>  - Бронирование мест на рейсе с ID flight_id (функция reserve_seat).</li>
+<li><code>/reviews/&lt;int:flight_id&gt;/</code>  - Отображает отзывы о рейсе с ID flight_id (функция flight_reviews).</li>
+<li><code>/add_review/&lt;int:flight_id&gt;/</code>  - Добавление отзыва о рейсе с ID flight_id (функция add_review).</li>
+</ul>
+<h3 id="html-">HTML-страницы</h3>
+<ol>
+<li><strong>add_review.html</strong>
+<strong>Описание</strong>: Страница для добавления нового отзыва о рейсе.</li>
+</ol>
+<pre><code class="language-python">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Add Review&lt;/title&gt;
+    &lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;container mt-5&quot;&gt;
+        &lt;div class=&quot;card shadow&quot;&gt;
+            &lt;div class=&quot;card-header bg-primary text-white&quot;&gt;
+                &lt;h3&gt;Add Review for Flight {{ flight.number }}&lt;/h3&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;card-body&quot;&gt;
+                &lt;form method=&quot;post&quot;&gt;
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    &lt;button type=&quot;submit&quot; class=&quot;btn btn-success w-100&quot;&gt;Submit Review&lt;/button&gt;
+                &lt;/form&gt;
+                &lt;a href=&quot;{% url 'flight_reviews' flight.id %}&quot; class=&quot;btn btn-secondary mt-3 w-100&quot;&gt;Back to Reviews&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>2.<strong>flight_list.html</strong>
+<strong>Описание</strong>: Отображает список доступных рейсов с возможностью бронирования и просмотра отзывов.</p>
+<pre><code class="language-python">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Flight List&lt;/title&gt;
+    &lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;container mt-5&quot;&gt;
+        &lt;h1 class=&quot;text-center mb-4&quot;&gt;Available Flights&lt;/h1&gt;
+        &lt;div class=&quot;d-flex justify-content-between mb-3&quot;&gt;
+            {% if user.is_authenticated %}
+                &lt;a href=&quot;{% url 'logout' %}&quot; class=&quot;btn btn-danger&quot;&gt;Logout&lt;/a&gt;
+            {% else %}
+                &lt;a href=&quot;{% url 'login' %}&quot; class=&quot;btn btn-primary&quot;&gt;Login&lt;/a&gt;
+                &lt;a href=&quot;{% url 'register' %}&quot; class=&quot;btn btn-secondary&quot;&gt;Register&lt;/a&gt;
+            {% endif %}
+        &lt;/div&gt;
+        &lt;table class=&quot;table table-bordered table-hover&quot;&gt;
+            &lt;thead class=&quot;table-dark&quot;&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Number&lt;/th&gt;
+                    &lt;th&gt;Airline&lt;/th&gt;
+                    &lt;th&gt;Departure&lt;/th&gt;
+                    &lt;th&gt;Arrival&lt;/th&gt;
+                    &lt;th&gt;Type&lt;/th&gt;
+                    &lt;th&gt;Gate&lt;/th&gt;
+                    &lt;th&gt;Actions&lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+                {% for flight in flights %}
+                &lt;tr&gt;
+                    &lt;td&gt;{{ flight.number }}&lt;/td&gt;
+                    &lt;td&gt;{{ flight.airline }}&lt;/td&gt;
+                    &lt;td&gt;{{ flight.departure }}&lt;/td&gt;
+                    &lt;td&gt;{{ flight.arrival }}&lt;/td&gt;
+                    &lt;td&gt;{{ flight.flight_type }}&lt;/td&gt;
+                    &lt;td&gt;{{ flight.gate }}&lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;a href=&quot;{% url 'reserve_seat' flight.id %}&quot; class=&quot;btn btn-success btn-sm&quot;&gt;Reserve&lt;/a&gt;
+                        &lt;a href=&quot;{% url 'flight_reviews' flight.id %}&quot; class=&quot;btn btn-info btn-sm&quot;&gt;Reviews&lt;/a&gt;
+                        &lt;a href=&quot;{% url 'add_review' flight.id %}&quot; class=&quot;btn btn-warning btn-sm&quot;&gt;Add Review&lt;/a&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                {% endfor %}
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+<ol>
+<li><strong>flight_reviews.html</strong>
+<strong>Описание</strong>: Страница для отображения отзывов о рейсе.</li>
+</ol>
+<pre><code class="language-python">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Flight Reviews&lt;/title&gt;
+    &lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;container mt-5&quot;&gt;
+        &lt;h1&gt;Reviews for Flight {{ flight.number }}&lt;/h1&gt;
+        &lt;a href=&quot;{% url 'add_review' flight.id %}&quot; class=&quot;btn btn-primary mb-3&quot;&gt;Add a Review&lt;/a&gt;
+        &lt;div class=&quot;list-group&quot;&gt;
+            {% for review in reviews %}
+                &lt;div class=&quot;list-group-item&quot;&gt;
+                    &lt;h5&gt;{{ review.user.username }} - {{ review.date }}&lt;/h5&gt;
+                    &lt;p&gt;{{ review.text }}&lt;/p&gt;
+                    &lt;small&gt;Rating: {{ review.rating }}/10&lt;/small&gt;
+                &lt;/div&gt;
+            {% empty %}
+                &lt;p&gt;No reviews yet.&lt;/p&gt;
+            {% endfor %}
+        &lt;/div&gt;
+        &lt;a href=&quot;{% url 'flight_list' %}&quot; class=&quot;btn btn-secondary mt-3&quot;&gt;Back to Flights&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ol>
+<li><strong>login.html</strong>
+<strong>Описание</strong>: Страница для входа пользователя в систему.</li>
+</ol>
+<pre><code class="language-python">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Login&lt;/title&gt;
+    &lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;container mt-5&quot;&gt;
+        &lt;div class=&quot;card shadow&quot;&gt;
+            &lt;div class=&quot;card-header bg-primary text-white&quot;&gt;
+                &lt;h3&gt;Login&lt;/h3&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;card-body&quot;&gt;
+                &lt;form method=&quot;post&quot;&gt;
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary w-100&quot;&gt;Login&lt;/button&gt;
+                &lt;/form&gt;
+                &lt;p class=&quot;text-center mt-3&quot;&gt;
+                    Don't have an account? &lt;a href=&quot;{% url 'register' %}&quot;&gt;Register&lt;/a&gt;
+                &lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ol>
+<li><strong>register.html</strong>
+<strong>Описание</strong>: Страница для регистрации нового пользователя.</li>
+</ol>
+<pre><code class="language-python">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Register&lt;/title&gt;
+    &lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;container mt-5&quot;&gt;
+        &lt;div class=&quot;card shadow&quot;&gt;
+            &lt;div class=&quot;card-header bg-primary text-white&quot;&gt;
+                &lt;h3&gt;Register&lt;/h3&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;card-body&quot;&gt;
+                &lt;form method=&quot;post&quot;&gt;
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    &lt;button type=&quot;submit&quot; class=&quot;btn btn-success w-100&quot;&gt;Register&lt;/button&gt;
+                &lt;/form&gt;
+                &lt;p class=&quot;text-center mt-3&quot;&gt;
+                    Already have an account? &lt;a href=&quot;{% url 'login' %}&quot;&gt;Login&lt;/a&gt;
+                &lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ol>
+<li><strong>reserve_seat.html</strong>
+<strong>Описание</strong>: Страница для бронирования места на рейсе.</li>
+</ol>
+<pre><code class="language-python">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Reserve Seat for {{ flight.number }}&lt;/title&gt;
+    &lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;container mt-5&quot;&gt;
+        &lt;h1 class=&quot;text-center&quot;&gt;Reserve a Seat for Flight {{ flight.number }}&lt;/h1&gt;
+        &lt;div class=&quot;card mt-4&quot;&gt;
+            &lt;div class=&quot;card-body&quot;&gt;
+                &lt;h5 class=&quot;card-title&quot;&gt;Flight Details&lt;/h5&gt;
+                &lt;p&gt;&lt;strong&gt;Airline:&lt;/strong&gt; {{ flight.airline }}&lt;/p&gt;
+                &lt;p&gt;&lt;strong&gt;Departure:&lt;/strong&gt; {{ flight.departure }}&lt;/p&gt;
+                &lt;p&gt;&lt;strong&gt;Arrival:&lt;/strong&gt; {{ flight.arrival }}&lt;/p&gt;
+                &lt;p&gt;&lt;strong&gt;Type:&lt;/strong&gt; {{ flight.flight_type }}&lt;/p&gt;
+                &lt;p&gt;&lt;strong&gt;Gate:&lt;/strong&gt; {{ flight.gate }}&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;mt-4&quot;&gt;
+            &lt;h5 class=&quot;mb-3&quot;&gt;Reserve Your Seat&lt;/h5&gt;
+            &lt;form method=&quot;post&quot;&gt;
+                {% csrf_token %}
+                &lt;div class=&quot;mb-3&quot;&gt;
+                    {{ form.as_p }}
+                &lt;/div&gt;
+                &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot;&gt;Reserve&lt;/button&gt;
+                &lt;a href=&quot;{% url 'flight_list' %}&quot; class=&quot;btn btn-secondary&quot;&gt;Cancel&lt;/a&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 </code></pre></div>
             </div>
         </div>
@@ -192,5 +647,5 @@ docs/
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2025-01-18 16:35:25.130953+00:00
+Build Date UTC : 2025-01-18 16:36:05.290406+00:00
 -->
