@@ -1229,7 +1229,7 @@ car_count_per_driver = Customer.objects.annotate(num_cars=Count('cars'))
 for customer in car_count_per_driver:
     print(f&quot;{customer.name} - {customer.num_cars} машин(ы)&quot;)
 </code></pre>
-<p><img alt="Описание" src="image/p-6.JPG" /></p>
+<p><img alt="Описание" src="C:\Users\dasha\Desktop\ITMO_ICT_WebDevelopment_2024-2025\students\k3344\Kibenko_Daria\my-project\site\images\p-1.JPG" /></p>
 <p><strong>Подсчитать количество машин каждой марки</strong>:</p>
 <pre><code>car_count_by_make = Car.objects.values('make').annotate(count=Count('make'))
 for make in car_count_by_make:
