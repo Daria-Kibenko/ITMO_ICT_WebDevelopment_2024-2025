@@ -1,0 +1,1297 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://daria-kibenko.github.io/ITMO_ICT_WebDevelopment_2024-2025/practice-3-1/">
+      
+      
+        <link rel="prev" href="../tasks/">
+      
+      
+        <link rel="next" href="../terms/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Practice 3.1 - Laboratory works</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#django-web-framework" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Laboratory works" class="md-header__button md-logo" aria-label="Laboratory works" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Laboratory works
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Practice 3.1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Laboratory works" class="md-nav__button md-logo" aria-label="Laboratory works" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Laboratory works
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Lab1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Lab1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Task_1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Task-2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Task-3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Task-4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Task-5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conclusion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conclusion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Lab2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Lab2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../result/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Demonstration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Lab3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Lab3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codes_2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../result_2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Demonstration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tasks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tasks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Practice 3.1
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Practice 3.1
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Написание кода
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Задание 1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Задание 2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Задание 3
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Lab4
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Lab4
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codes_3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Написание кода
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Задание 1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Задание 2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Задание 3
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="django-web-framework">Django Web framework. Запросы и их выполнение.</h1>
+<p><strong>Цель работы</strong>: получить представление о работе с запросами в Django ORM.</p>
+<h2 id="_1">Написание кода</h2>
+<p>Код представляет собой реализацию бэкенда для системы автосервиса, разработанную на базе фреймворков Django и Django REST Framework (DRF).
+1. <strong>Административная панель</strong></p>
+<pre><code class="language-commandline">from django.contrib import admin
+from .models import Customer, Car, Employee, Service, Order, OrderDetails, Payment, Qualification
+admin.site.register(...)
+</code></pre>
+<ul>
+<li>Регистрация моделей в Django admin для управления через административный интерфейс.</li>
+<li>
+<p>Позволяет администратору добавлять, редактировать и удалять записи из базы данных через встроенную панель управления.</p>
+</li>
+<li>
+<p><strong>Настройка приложения</strong></p>
+</li>
+</ul>
+<pre><code class="language-commandline">from django.apps import AppConfig
+
+class AutoserviceConfig(AppConfig):
+    default_auto_field = &quot;django.db.models.BigAutoField&quot;
+    name = &quot;autoservice&quot;
+</code></pre>
+<p>Класс конфигурации приложения autoservice, который объявляет настройки для приложения, включая автоматический тип ID (BigAutoField).</p>
+<ol>
+<li><strong>Модели</strong></li>
+</ol>
+<p>Модели определяют структуру базы данных с помощью классов Python.
+Основные модели:</p>
+<ul>
+<li><strong>Customer</strong>: хранит данные о клиентах.</li>
+</ul>
+<pre><code class="language-commandline">class Customer(models.Model):
+    customer_id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    phone = models.CharField(max_length=20, unique=True)
+    email = models.EmailField(unique=True)
+    address = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+</code></pre>
+<ul>
+<li><strong>Car</strong>: хранит информацию об автомобилях клиентов, включая связь с моделью Customer.</li>
+</ul>
+<pre><code class="language-commandline">class Car(models.Model):
+    car_id = models.AutoField(primary_key=True)
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name=&quot;cars&quot;)
+    license_plate = models.CharField(max_length=20, unique=True)
+    make = models.CharField(max_length=100)
+    model = models.CharField(max_length=100)
+    year = models.IntegerField()
+
+    def __str__(self):
+        return f&quot;{self.make} {self.model} ({self.license_plate})&quot;
+</code></pre>
+<ul>
+<li><strong>Employee</strong>: информация о сотрудниках автосервиса.</li>
+</ul>
+<pre><code class="language-commandline">class Employee(models.Model):
+    employee_id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    position = models.CharField(max_length=100)
+    phone = models.CharField(max_length=20, unique=True)
+    email = models.EmailField(unique=True)
+
+    def __str__(self):
+        return self.name
+</code></pre>
+<ul>
+<li><strong>Service</strong>: информация об услугах автосервиса (название, описание, стоимость).</li>
+</ul>
+<pre><code class="language-commandline">class Service(models.Model):
+    service_id = models.AutoField(primary_key=True)
+    service_name = models.CharField(max_length=255)
+    description = models.TextField(blank=True, null=True)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+
+    def __str__(self):
+        return self.service_name
+</code></pre>
+<ul>
+<li><strong>Order</strong>: заказы, связывающие клиента, автомобиль, сотрудника и статус заказа.</li>
+</ul>
+<pre><code class="language-commandline">class Order(models.Model):
+    STATUS_CHOICES = [
+        ('in_progress', 'В процессе'),
+        ('completed', 'Завершен'),
+    ]
+
+    order_id = models.AutoField(primary_key=True)
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name=&quot;orders&quot;)
+    car = models.ForeignKey(Car, on_delete=models.CASCADE, related_name=&quot;orders&quot;)
+    employee = models.ForeignKey(Employee, on_delete=models.SET_NULL, null=True, related_name=&quot;orders&quot;)
+    order_date = models.DateTimeField(auto_now_add=True)
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='in_progress')
+    total_cost = models.DecimalField(max_digits=10, decimal_places=2, default=0.0)
+
+    def __str__(self):
+        return f&quot;Order {self.order_id}&quot;
+</code></pre>
+<ul>
+<li><strong>OrderDetails</strong>: детали заказа, связывающие конкретные услуги с заказом.</li>
+</ul>
+<pre><code class="language-commandline">class OrderDetails(models.Model):
+    order_detail_id = models.AutoField(primary_key=True)
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name=&quot;details&quot;)
+    service = models.ForeignKey(Service, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField()
+    cost = models.DecimalField(max_digits=10, decimal_places=2)
+
+    def __str__(self):
+        return f&quot;Detail {self.order_detail_id} for Order {self.order.order_id}&quot;
+</code></pre>
+<ul>
+<li><strong>Payment</strong>: информация об оплатах (метод, сумма).</li>
+</ul>
+<pre><code class="language-commandline">class Payment(models.Model):
+    payment_id = models.AutoField(primary_key=True)
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name=&quot;payments&quot;)
+    payment_date = models.DateTimeField(auto_now_add=True)
+    payment_method = models.CharField(max_length=50)
+    payment_amount = models.DecimalField(max_digits=10, decimal_places=2)
+
+    def __str__(self):
+        return f&quot;Payment {self.payment_id} for Order {self.order.order_id}&quot;
+</code></pre>
+<ul>
+<li><strong>Qualification</strong>: квалификации сотрудников (связь с услугами, которые они могут выполнять).</li>
+</ul>
+<pre><code class="language-commandline">class Qualification(models.Model):
+    qualification_id = models.AutoField(primary_key=True)
+    employee = models.ForeignKey(Employee, on_delete=models.CASCADE, related_name=&quot;qualifications&quot;)
+    service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name=&quot;qualifications&quot;)
+
+    def __str__(self):
+        return f&quot;{self.employee.name} - {self.service.service_name}&quot;
+</code></pre>
+<p>Пример ключевых отношений:
++ Order связан с Customer, Car, Employee.
++ OrderDetails связан с Order и Service.
++ Qualification связывает сотрудников (Employee) с услугами (Service).</p>
+<ol>
+<li><strong>Сериализаторы</strong></li>
+</ol>
+<pre><code class="language-commandline">from rest_framework import serializers
+from .models import ...
+</code></pre>
+<ul>
+<li>Сериализаторы преобразуют модели в JSON-формат и обратно для взаимодействия с API.</li>
+<li>Все модели имеют собственные сериализаторы (например, CustomerSerializer, CarSerializer).</li>
+</ul>
+<pre><code class="language-commandline">class CustomUserCreateSerializer(UserCreateSerializer):
+    class Meta(UserCreateSerializer.Meta):
+        fields = ['id', 'email', 'username', 'password']
+
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'email']
+
+
+class CustomerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Customer
+        fields = '__all__'
+
+class CarSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Car
+        fields = '__all__'
+
+
+class EmployeeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Employee
+        fields = '__all__'
+
+
+class ServiceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Service
+        fields = '__all__'
+
+
+class OrderSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Order
+        fields = '__all__'
+
+
+class OrderDetailsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = OrderDetails
+        fields = '__all__'
+
+
+class PaymentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Payment
+        fields = '__all__'
+
+
+class QualificationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Qualification
+        fields = '__all__'
+</code></pre>
+<ol>
+<li><strong>Вьюсеты</strong></li>
+</ol>
+<pre><code class="language-commandline">from rest_framework import viewsets
+from .models import ...
+from .serializers import ...
+</code></pre>
+<ul>
+<li>Вьюсеты предоставляют CRUD-операции для работы с API.</li>
+<li>Для каждой модели создан ModelViewSet, который включает методы list, create, retrieve, update, delete.</li>
+</ul>
+<pre><code class="language-commandline">from rest_framework import viewsets
+from .models import Customer, Car, Employee, Service, Order, OrderDetails, Payment, Qualification
+from .serializers import (
+    CustomerSerializer, CarSerializer, EmployeeSerializer,
+    ServiceSerializer, OrderSerializer, OrderDetailsSerializer,
+    PaymentSerializer, QualificationSerializer
+)
+from django.contrib.auth.models import User
+from rest_framework.views import APIView
+from rest_framework.response import Response
+
+
+class UserListView(APIView):
+    def get(self, request):
+        users = User.objects.all()
+        user_data = [{'id': user.id, 'username': user.username} for user in users]
+        return Response(user_data)
+
+
+class CustomerViewSet(viewsets.ModelViewSet):
+    queryset = Customer.objects.all()
+    serializer_class = CustomerSerializer
+
+
+class CarViewSet(viewsets.ModelViewSet):
+    queryset = Car.objects.all()
+    serializer_class = CarSerializer
+
+
+class EmployeeViewSet(viewsets.ModelViewSet):
+    queryset = Employee.objects.all()
+    serializer_class = EmployeeSerializer
+
+
+class ServiceViewSet(viewsets.ModelViewSet):
+    queryset = Service.objects.all()
+    serializer_class = ServiceSerializer
+
+
+class OrderViewSet(viewsets.ModelViewSet):
+    queryset = Order.objects.all()
+    serializer_class = OrderSerializer
+
+
+class OrderDetailsViewSet(viewsets.ModelViewSet):
+    queryset = OrderDetails.objects.all()
+    serializer_class = OrderDetailsSerializer
+
+
+class PaymentViewSet(viewsets.ModelViewSet):
+    queryset = Payment.objects.all()
+    serializer_class = PaymentSerializer
+
+
+class QualificationViewSet(viewsets.ModelViewSet):
+    queryset = Qualification.objects.all()
+    serializer_class = QualificationSerializer
+</code></pre>
+<h2 id="1">Задание 1</h2>
+<p><strong>Задача</strong>:</p>
+<ul>
+<li>Создать 6-7 новых автовладельцев и 5-6 автомобилей. </li>
+<li>Назначить каждому автовладельцу удостоверение и 1-3 автомобиля.</li>
+<li>Выполнить это через интерактивный режим интерпретатора либо в отдельном файле.</li>
+</ul>
+<p><strong>Выполнение</strong>:</p>
+<pre><code class="language-commandline">from autoservice.models import Customer
+
+customers = [
+    Customer(name=&quot;Иван Иванов&quot;, phone=&quot;1122334455&quot;, email=&quot;ivan@example.com&quot;, address=&quot;ул. Ленина, д. 1&quot;),
+    Customer(name=&quot;Петр Петров&quot;, phone=&quot;2233445566&quot;, email=&quot;petr@example.com&quot;, address=&quot;ул. Победы, д. 2&quot;),
+    Customer(name=&quot;Олег Олегов&quot;, phone=&quot;3344556677&quot;, email=&quot;oleg@example.com&quot;, address=&quot;ул. Садовая, д. 3&quot;),
+    Customer(name=&quot;Анна Смирнова&quot;, phone=&quot;4455667788&quot;, email=&quot;anna@example.com&quot;, address=&quot;ул. Центральная, д. 4&quot;),
+    Customer(name=&quot;Мария Кузнецова&quot;, phone=&quot;5566778899&quot;, email=&quot;maria@example.com&quot;, address=&quot;ул. Мира, д. 5&quot;),
+    Customer(name=&quot;Алексей Алексей&quot;, phone=&quot;6677889900&quot;, email=&quot;aleksey@example.com&quot;, address=&quot;ул. Октябрьская, д. 6&quot;),
+    Customer(name=&quot;Елена Павлова&quot;, phone=&quot;7788990011&quot;, email=&quot;elena@example.com&quot;, address=&quot;ул. Звездная, д. 7&quot;)
+]
+
+for customer in customers:
+    customer.save()
+
+for customer in Customer.objects.all():
+    print(customer.name, customer.phone, customer.email)
+
+
+cars = [
+    Car(customer=customers[0], license_plate=&quot;ABC123&quot;, make=&quot;Toyota&quot;, model=&quot;Corolla&quot;, year=2015),
+    Car(customer=customers[1], license_plate=&quot;DEF456&quot;, make=&quot;Honda&quot;, model=&quot;Civic&quot;, year=2018),
+    Car(customer=customers[1], license_plate=&quot;GHI789&quot;, make=&quot;Toyota&quot;, model=&quot;Camry&quot;, year=2016),
+    Car(customer=customers[2], license_plate=&quot;JKL012&quot;, make=&quot;Ford&quot;, model=&quot;Focus&quot;, year=2017),
+    Car(customer=customers[3], license_plate=&quot;MNO345&quot;, make=&quot;Nissan&quot;, model=&quot;Altima&quot;, year=2019),
+    Car(customer=customers[4], license_plate=&quot;PQR678&quot;, make=&quot;Volkswagen&quot;, model=&quot;Passat&quot;, year=2018)
+]
+
+for car in cars:
+    car.save()
+</code></pre>
+<h2 id="2">Задание 2</h2>
+<p><strong>Задача</strong>: написать запросы на фильтрацию.</p>
+<p><strong>Выполнение</strong>: </p>
+<p><strong>Вывести все машины марки “Toyota”</strong>:</p>
+<pre><code>toyota_cars = Car.objects.filter(make=&quot;Toyota&quot;)
+for car in toyota_cars:
+    print(car)
+</code></pre>
+<p><img src="C:\Users\dasha\PycharmProjects\Web-programming\flight_board\my-project\docs\images\p-1.JPG" alt="Описание изображения" width="600"></p>
+<p><strong>Найти всех водителей с именем “Олег”</strong>:</p>
+<pre><code>from autoservice.models import Employee
+
+employees = [
+    {&quot;name&quot;: &quot;Иван Иванов&quot;, &quot;position&quot;: &quot;Механик&quot;, &quot;phone&quot;: &quot;89001234567&quot;, &quot;email&quot;: &quot;ivan.ivanov@example.com&quot;},
+    {&quot;name&quot;: &quot;Олег Смирнов&quot;, &quot;position&quot;: &quot;Автоэлектрик&quot;, &quot;phone&quot;: &quot;89007654321&quot;, &quot;email&quot;: &quot;oleg.smirnov@example.com&quot;},
+    {&quot;name&quot;: &quot;Марина Петрова&quot;, &quot;position&quot;: &quot;Мастер-приемщик&quot;, &quot;phone&quot;: &quot;89005556677&quot;, &quot;email&quot;: &quot;marina.petrova@example.com&quot;},
+    {&quot;name&quot;: &quot;Дмитрий Сидоров&quot;, &quot;position&quot;: &quot;Механик&quot;, &quot;phone&quot;: &quot;89003334455&quot;, &quot;email&quot;: &quot;dmitry.sidorov@example.com&quot;},
+    {&quot;name&quot;: &quot;Екатерина Орлова&quot;, &quot;position&quot;: &quot;Администратор&quot;, &quot;phone&quot;: &quot;89009998877&quot;, &quot;email&quot;: &quot;ekaterina.orlova@example.com&quot;},
+]
+
+for emp in employees:
+    Employee.objects.get_or_create(
+        name=emp[&quot;name&quot;],
+        position=emp[&quot;position&quot;],
+        phone=emp[&quot;phone&quot;],
+        email=emp[&quot;email&quot;]
+    )
+
+oleg_drivers = Employee.objects.filter(name=&quot;Олег&quot;)
+for driver in oleg_drivers:
+    print(driver)
+</code></pre>
+<p><img src="C:\Users\dasha\PycharmProjects\Web-programming\flight_board\my-project\docs\images\p-2.JPG" alt="Описание изображения" width="600"></p>
+<p><strong>Получить удостоверение для случайного владельца по его id</strong>:</p>
+<pre><code>from django.contrib.auth.models import User
+from autoservice.models import Profile
+
+users_data = [
+    {&quot;username&quot;: &quot;ivan_ivanov&quot;, &quot;email&quot;: &quot;ivan.ivanov@example.com&quot;},
+    {&quot;username&quot;: &quot;oleg_smirnov&quot;, &quot;email&quot;: &quot;oleg.smirnov@example.com&quot;},
+    {&quot;username&quot;: &quot;marina_petrova&quot;, &quot;email&quot;: &quot;marina.petrova@example.com&quot;},
+    {&quot;username&quot;: &quot;dmitry_sidorov&quot;, &quot;email&quot;: &quot;dmitry.sidorov@example.com&quot;},
+    {&quot;username&quot;: &quot;ekaterina_orlova&quot;, &quot;email&quot;: &quot;ekaterina.orlova@example.com&quot;},
+]
+
+for user_data in users_data:
+    user, created = User.objects.get_or_create(username=user_data[&quot;username&quot;], defaults={&quot;email&quot;: user_data[&quot;email&quot;]})
+    if created:
+        print(f&quot;Создан пользователь: {user.username}&quot;)
+
+profiles_data = [
+    {&quot;user&quot;: User.objects.get(username=&quot;ivan_ivanov&quot;), &quot;bio&quot;: &quot;Мастер по ремонту двигателя&quot;},
+    {&quot;user&quot;: User.objects.get(username=&quot;oleg_smirnov&quot;), &quot;bio&quot;: &quot;Автоэлектрик с 10-летним стажем&quot;},
+    {&quot;user&quot;: User.objects.get(username=&quot;marina_petrova&quot;), &quot;bio&quot;: &quot;Опытный мастер-приемщик&quot;},
+    {&quot;user&quot;: User.objects.get(username=&quot;dmitry_sidorov&quot;), &quot;bio&quot;: &quot;Механик широкого профиля&quot;},
+    {&quot;user&quot;: User.objects.get(username=&quot;ekaterina_orlova&quot;), &quot;bio&quot;: &quot;Администратор автосервиса&quot;},
+]
+
+for profile_data in profiles_data:
+    Profile.objects.get_or_create(user=profile_data[&quot;user&quot;], defaults={&quot;bio&quot;: profile_data[&quot;bio&quot;]})
+
+
+customer = Customer.objects.first()
+
+profile = Profile.objects.get(user=customer.user)
+print(profile)
+</code></pre>
+<p><strong>Вывести всех владельцев красных машин (или другого цвета)</strong>:</p>
+<pre><code>Допустим, у нас есть поле &quot;color&quot; в модели Car (его нужно добавить в модели)
+
+red_cars_owners = Customer.objects.filter(cars__color=&quot;Красный&quot;)
+for owner in red_cars_owners:
+print(owner)
+</code></pre>
+<p><strong>Найти всех владельцев, чей год владения машиной начинается с 2010:</strong></p>
+<pre><code>owners_2010 = Customer.objects.filter(cars__year__gte=2010)
+for owner in owners_2010:
+    print(owner)
+</code></pre>
+<p><img src="C:\Users\dasha\PycharmProjects\Web-programming\flight_board\my-project\docs\images\p-3.JPG" alt="Описание изображения" width="600"></p>
+<h2 id="3">Задание 3</h2>
+<p><strong>Задача</strong>: реализовать несколько запросов с применением описанных методов.</p>
+<p><strong>Выполнение</strong>: 
+<strong>Вывод даты выдачи самого старшего водительского удостоверения:</strong></p>
+<pre><code>oldest_profile = Profile.objects.order_by('user__date_joined').first()
+if oldest_profile:
+    print(oldest_profile.user.date_joined)
+else:
+    print(&quot;Нет данных о профилях.&quot;)
+</code></pre>
+<p><img src="C:\Users\dasha\PycharmProjects\Web-programming\flight_board\my-project\docs\images\p-4.JPG" alt="Описание изображения" width="600"></p>
+<p><strong>Указать самую позднюю дату владения машиной</strong>:</p>
+<pre><code>latest_car_ownership = Car.objects.order_by('-year').first()
+if latest_car_ownership:
+    print(latest_car_ownership.year)
+else:
+    print(&quot;Нет данных о машинах.&quot;)
+</code></pre>
+<p><img src="C:\Users\dasha\PycharmProjects\Web-programming\flight_board\my-project\docs\images\p-5.JPG" alt="Описание изображения" width="600"></p>
+<p><strong>Вывести количество машин для каждого водителя:</strong></p>
+<pre><code>from django.db.models import Count
+
+car_count_per_driver = Customer.objects.annotate(num_cars=Count('cars'))
+for customer in car_count_per_driver:
+    print(f&quot;{customer.name} - {customer.num_cars} машин(ы)&quot;)
+</code></pre>
+<p><img src="C:\Users\dasha\PycharmProjects\Web-programming\flight_board\my-project\docs\images\p-6.JPG" alt="Описание изображения" width="600"></p>
+<p><strong>Подсчитать количество машин каждой марки</strong>:</p>
+<pre><code>car_count_by_make = Car.objects.values('make').annotate(count=Count('make'))
+for make in car_count_by_make:
+    print(f&quot;{make['make']} - {make['count']} машин&quot;)
+</code></pre>
+<p><img src="C:\Users\dasha\PycharmProjects\Web-programming\flight_board\my-project\docs\images\p-7.JPG" alt="Описание изображения" width="600"></p>
+<p><strong>Отсортировать всех автовладельцев по дате выдачи удостоверения, с использованием .distinct():</strong></p>
+<pre><code>owners_sorted_by_date = Customer.objects.order_by('user__date_joined').distinct('user')
+for owner in owners_sorted_by_date:
+    print(owner.name)
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>
