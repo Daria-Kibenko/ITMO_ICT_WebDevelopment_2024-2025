@@ -1131,7 +1131,7 @@ for car in cars:
 for car in toyota_cars:
     print(car)
 </code></pre>
-<p><img src="C:\Users\dasha\PycharmProjects\Web-programming\flight_board\my-project\docs\images\p-1.JPG" alt="Описание изображения" width="600"></p>
+<p><img alt="Описание" src="image/p-1.JPG" /></p>
 <p><strong>Найти всех водителей с именем “Олег”</strong>:</p>
 <pre><code>from autoservice.models import Employee
 
@@ -1155,7 +1155,7 @@ oleg_drivers = Employee.objects.filter(name=&quot;Олег&quot;)
 for driver in oleg_drivers:
     print(driver)
 </code></pre>
-<p><img src="C:\Users\dasha\PycharmProjects\Web-programming\flight_board\my-project\docs\images\p-2.JPG" alt="Описание изображения" width="600"></p>
+<p><img alt="Описание" src="image/p-2.JPG" /></p>
 <p><strong>Получить удостоверение для случайного владельца по его id</strong>:</p>
 <pre><code>from django.contrib.auth.models import User
 from autoservice.models import Profile
@@ -1202,7 +1202,7 @@ print(owner)
 for owner in owners_2010:
     print(owner)
 </code></pre>
-<p><img src="C:\Users\dasha\PycharmProjects\Web-programming\flight_board\my-project\docs\images\p-3.JPG" alt="Описание изображения" width="600"></p>
+<p><img alt="Описание" src="image/p-3.JPG" /></p>
 <h2 id="3">Задание 3</h2>
 <p><strong>Задача</strong>: реализовать несколько запросов с применением описанных методов.</p>
 <p><strong>Выполнение</strong>: 
@@ -1213,7 +1213,7 @@ if oldest_profile:
 else:
     print(&quot;Нет данных о профилях.&quot;)
 </code></pre>
-<p><img src="C:\Users\dasha\PycharmProjects\Web-programming\flight_board\my-project\docs\images\p-4.JPG" alt="Описание изображения" width="600"></p>
+<p><img alt="Описание" src="image/p-4.JPG" /></p>
 <p><strong>Указать самую позднюю дату владения машиной</strong>:</p>
 <pre><code>latest_car_ownership = Car.objects.order_by('-year').first()
 if latest_car_ownership:
@@ -1221,7 +1221,7 @@ if latest_car_ownership:
 else:
     print(&quot;Нет данных о машинах.&quot;)
 </code></pre>
-<p><img src="C:\Users\dasha\PycharmProjects\Web-programming\flight_board\my-project\docs\images\p-5.JPG" alt="Описание изображения" width="600"></p>
+<p><img alt="Описание" src="image/p-5.JPG" /></p>
 <p><strong>Вывести количество машин для каждого водителя:</strong></p>
 <pre><code>from django.db.models import Count
 
@@ -1229,13 +1229,13 @@ car_count_per_driver = Customer.objects.annotate(num_cars=Count('cars'))
 for customer in car_count_per_driver:
     print(f&quot;{customer.name} - {customer.num_cars} машин(ы)&quot;)
 </code></pre>
-<p><img src="C:\Users\dasha\PycharmProjects\Web-programming\flight_board\my-project\docs\images\p-6.JPG" alt="Описание изображения" width="600"></p>
+<p><img alt="Описание" src="image/p-6.JPG" /></p>
 <p><strong>Подсчитать количество машин каждой марки</strong>:</p>
 <pre><code>car_count_by_make = Car.objects.values('make').annotate(count=Count('make'))
 for make in car_count_by_make:
     print(f&quot;{make['make']} - {make['count']} машин&quot;)
 </code></pre>
-<p><img src="C:\Users\dasha\PycharmProjects\Web-programming\flight_board\my-project\docs\images\p-7.JPG" alt="Описание изображения" width="600"></p>
+<p><img alt="Описание" src="image/p-7.JPG" /></p>
 <p><strong>Отсортировать всех автовладельцев по дате выдачи удостоверения, с использованием .distinct():</strong></p>
 <pre><code>owners_sorted_by_date = Customer.objects.order_by('user__date_joined').distinct('user')
 for owner in owners_sorted_by_date:
